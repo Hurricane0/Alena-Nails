@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Alena-Nails/static/css/main.bbcc3eeb.chunk.css",
+    "main.js": "/Alena-Nails/static/js/main.5f9732f3.chunk.js",
+    "main.js.map": "/Alena-Nails/static/js/main.5f9732f3.chunk.js.map",
+    "runtime-main.js": "/Alena-Nails/static/js/runtime-main.69545e1f.js",
+    "runtime-main.js.map": "/Alena-Nails/static/js/runtime-main.69545e1f.js.map",
+    "static/js/2.788f3459.chunk.js": "/Alena-Nails/static/js/2.788f3459.chunk.js",
+    "static/js/2.788f3459.chunk.js.map": "/Alena-Nails/static/js/2.788f3459.chunk.js.map",
+    "index.html": "/Alena-Nails/index.html",
+    "precache-manifest.277d1266831c000598a735bf93a011a4.js": "/Alena-Nails/precache-manifest.277d1266831c000598a735bf93a011a4.js",
+    "service-worker.js": "/Alena-Nails/service-worker.js",
+    "static/css/main.bbcc3eeb.chunk.css.map": "/Alena-Nails/static/css/main.bbcc3eeb.chunk.css.map",
+    "static/js/2.788f3459.chunk.js.LICENSE.txt": "/Alena-Nails/static/js/2.788f3459.chunk.js.LICENSE.txt",
+    "static/media/BigLogo.d7795ff3.svg": "/Alena-Nails/static/media/BigLogo.d7795ff3.svg",
+    "static/media/Logo_Nails_SVG.f60b6f27.svg": "/Alena-Nails/static/media/Logo_Nails_SVG.f60b6f27.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69545e1f.js",
+    "static/js/2.788f3459.chunk.js",
+    "static/css/main.bbcc3eeb.chunk.css",
+    "static/js/main.5f9732f3.chunk.js"
+  ]
+}
