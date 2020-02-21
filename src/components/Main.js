@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import * as axios from "axios";
+import Paginator from "./Paginator";
 
 const url = "https://alena-nails.firebaseio.com";
 
 const Main = ({ isEdit, openEditWindow, setItemId }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageData, setPageData] = useState(null);
 
   const fetch = async () => {
     const response = await axios.get(`${url}/notes.json`);
@@ -17,13 +21,24 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
         id: key
       };
     });
-    setData(payload);
+    setData(payload.reverse());
+    setPageData(payload.reverse().slice(0, currentPage * 20));
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetch();
-  }, [data]);
+    // eslint-disable-next-line
+  }, []);
+
+  const onPageChanged = page => {
+    if (page === 1) {
+      setPageData(data.slice(0, page * 20));
+    } else {
+      setPageData(data.slice(20 * (page - 1), 20 * page));
+    }
+    setCurrentPage(page);
+  };
 
   return (
     <>
@@ -37,7 +52,7 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
           >
             <div className="row">
               <div className="ui four doubling stackable cards">
-                {data.reverse().map(item => {
+                {pageData.map(item => {
                   return (
                     <Card
                       setItemId={setItemId}
@@ -54,6 +69,14 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
                 })}
               </div>
             </div>
+
+            {data.length > 20 ? (
+              <Paginator
+                onPageChanged={onPageChanged}
+                dataLength={data.length}
+                currentPage={currentPage}
+              />
+            ) : null}
           </div>
         </div>
       )}
