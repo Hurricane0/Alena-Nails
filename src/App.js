@@ -16,11 +16,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isAdd, setIsAdd] = useState(false);
 
-  const [isTest, setIsTest] = useState(false);
-  const toggleIsTest = () => {
-    setIsTest(!isTest);
-  };
-
   const openEditWindow = () => {
     setIsEditWindow(true);
   };
@@ -55,15 +50,11 @@ function App() {
 
       <Navbar onIsAdd={onIsAdd} toggleIsEdit={toggleIsEdit} />
 
-      {isTest ? (
-        <Main
-          setItemId={setItemId}
-          isEdit={isEdit}
-          openEditWindow={openEditWindow}
-        />
-      ) : (
-        <button onClick={toggleIsTest}>Open Main</button>
-      )}
+      <Main
+        setItemId={setItemId}
+        isEdit={isEdit}
+        openEditWindow={openEditWindow}
+      />
     </div>
   );
 }
