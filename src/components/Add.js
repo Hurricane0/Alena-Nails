@@ -68,22 +68,30 @@ const Add = ({ offIsAdd, toggleFakeAdd }) => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="modal_container">
-          <div className="custom_modal">
+          <div className="custom_modal add_modal">
             <input onChange={handleChange} type="file" />
 
-            <button
-              id="download"
-              onClick={handleUpload}
-              type="button"
-              className={
-                isDownloaded
-                  ? "tiny positive ui button"
-                  : "tiny negative ui button"
-              }
-            >
-              Загрузить фото
-            </button>
-            <br />
+            <div>
+              <i
+                style={{
+                  fontSize: "24px",
+                  color: isDownloaded ? "green" : "red"
+                }}
+                className="hand point right ui icon"
+              ></i>
+              <button
+                id="download"
+                onClick={handleUpload}
+                type="button"
+                className={
+                  isDownloaded
+                    ? "tiny positive ui button"
+                    : "tiny negative ui button"
+                }
+              >
+                Загрузить фото
+              </button>
+            </div>
             <div className="ui input">
               <input
                 value={name}
@@ -92,7 +100,6 @@ const Add = ({ offIsAdd, toggleFakeAdd }) => {
                 placeholder="Название товара"
               />
             </div>
-            <br />
             <div className="ui input">
               <input
                 value={description}
@@ -101,7 +108,6 @@ const Add = ({ offIsAdd, toggleFakeAdd }) => {
                 placeholder="Описание"
               />
             </div>
-            <br />
             <div className="ui input">
               <input
                 value={price}
@@ -110,9 +116,12 @@ const Add = ({ offIsAdd, toggleFakeAdd }) => {
                 placeholder="Цена"
               />
             </div>
-
-            <span onClick={offIsAdd}>Close</span>
-            <button type="submit">Подтвердить</button>
+            <button className="button ui green" type="submit">
+              Подтвердить
+            </button>
+            <button className="ui button black" onClick={offIsAdd}>
+              Закрыть
+            </button>
           </div>
         </div>
       </form>

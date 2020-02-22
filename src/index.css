@@ -312,3 +312,9 @@ code {
 .contacts_icons {
   font-size: 20px !important;
 }
+.add_modal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
