@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ee1f768a0a20d19d27a909cfe3e57b2",
+    "revision": "709d9f792728095f7f2564a13eb4bf3f",
     "url": "/Alena-Nails/index.html"
   },
   {
-    "revision": "eebf89d7f69c7f867824",
-    "url": "/Alena-Nails/static/css/main.36b79e98.chunk.css"
+    "revision": "72c37b530ad27cf80637",
+    "url": "/Alena-Nails/static/css/main.ae7de66e.chunk.css"
   },
   {
     "revision": "c6d78304f15e6625a1e3",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Alena-Nails/static/js/2.fbd430be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eebf89d7f69c7f867824",
-    "url": "/Alena-Nails/static/js/main.1938d188.chunk.js"
+    "revision": "72c37b530ad27cf80637",
+    "url": "/Alena-Nails/static/js/main.9e2c0e8f.chunk.js"
   },
   {
     "revision": "e67ae4d3979ad6df4e32",
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Alena-Nails/static/media/BigLogo.d7795ff3.svg"
   },
   {
-    "revision": "f60b6f2791d84126dc76d4fe431d6295",
-    "url": "/Alena-Nails/static/media/Logo_Nails_SVG.f60b6f27.svg"
+    "revision": "9fc667986f93d1cbb858e46cef64fdd9",
+    "url": "/Alena-Nails/static/media/Logo_Nails_SVG.9fc66798.svg"
   }
 ]);
