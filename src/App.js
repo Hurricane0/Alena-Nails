@@ -4,6 +4,7 @@ import Main from "./components/Main";
 import Preloader from "./components/Preloader";
 import Add from "./components/Add";
 import EditWindow from "./components/EditWindow";
+import Password from "./components/Password";
 // import firebase, { app } from "firebase";
 
 function App() {
@@ -15,6 +16,12 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [isAdd, setIsAdd] = useState(false);
+
+  const [deleteId, setDeleteId] = useState(null);
+  const [fakeAdd, setFakeAdd] = useState(false);
+
+  const [passwordRequired, setPasswordRequired] = useState(false);
+  const [editMode, setEditMode] = useState(false);
 
   const openEditWindow = () => {
     setIsEditWindow(true);
@@ -34,6 +41,26 @@ function App() {
     setIsAdd(false);
   };
 
+  const showDelele = id => {
+    setDeleteId(id);
+  };
+
+  const toggleFakeAdd = bool => {
+    setFakeAdd(bool);
+  };
+
+  const handlePassword = () => {
+    setPasswordRequired(true);
+  };
+
+  const unhandlePassword = () => {
+    setPasswordRequired(false);
+  };
+
+  const switchEditMode = () => {
+    setEditMode(true);
+  };
+
   setTimeout(() => {
     setIsLoading(false);
   }, 2000);
@@ -42,19 +69,45 @@ function App() {
       {isLoading ? <Preloader /> : null}
 
       {/* Add mode for ADDING post */}
-      {isAdd ? <Add offIsAdd={offIsAdd} /> : null}
+      {isAdd ? <Add offIsAdd={offIsAdd} toggleFakeAdd={toggleFakeAdd} /> : null}
 
       {isEditWindow ? (
-        <EditWindow closeEditWindow={closeEditWindow} ID={itemId} />
+        <EditWindow
+          closeEditWindow={closeEditWindow}
+          ID={itemId}
+          showDelele={showDelele}
+        />
       ) : null}
 
-      <Navbar onIsAdd={onIsAdd} toggleIsEdit={toggleIsEdit} />
+      {passwordRequired ? (
+        <Password
+          switchEditMode={switchEditMode}
+          unhandlePassword={unhandlePassword}
+        />
+      ) : null}
+
+      <Navbar
+        onIsAdd={onIsAdd}
+        toggleIsEdit={toggleIsEdit}
+        editMode={editMode}
+      />
 
       <Main
         setItemId={setItemId}
         isEdit={isEdit}
         openEditWindow={openEditWindow}
+        deleteId={deleteId}
+        toggleFakeAdd={toggleFakeAdd}
+        fakeAdd={fakeAdd}
       />
+      <div className="password_button_div">
+        <i
+          onClick={handlePassword}
+          style={{ fontSize: "24px" }}
+          class="paperclip icon"
+        ></i>
+        {/* <button onClick={handlePassword}>Register</button> */}
+      </div>
     </div>
   );
 }

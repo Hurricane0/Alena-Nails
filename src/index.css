@@ -217,3 +217,55 @@ code {
 .pagesNumbersBlock button:hover {
   background-color: #f4f5f8;
 }
+.password_button_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.password_button_div button {
+  background-color: rgb(243, 243, 243);
+  border: none;
+  outline: none;
+}
+.password_modal {
+  height: 200px !important;
+}
+.warning_editor_mode {
+  color: red;
+  text-align: center;
+  margin-top: 8px !important;
+  margin-bottom: 5px;
+}
+.warning_incorrect_password {
+  color: red;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.add_button {
+  position: absolute;
+  background-color: rgb(238, 237, 237);
+  color: rgb(63, 62, 62);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  top: 19px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 1px 3px;
+}
+.edit_button {
+  color: rgb(63, 62, 62);
+  position: absolute;
+  top: 60px;
+  background-color: rgb(238, 237, 237);
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0px 1px 3px;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { storage } from "../firebase";
 import * as axios from "axios";
 
-const Add = ({ offIsAdd }) => {
+const Add = ({ offIsAdd, toggleFakeAdd }) => {
   const url = "https://alena-nails.firebaseio.com";
 
   const [image, setImage] = useState(null);
@@ -22,6 +22,7 @@ const Add = ({ offIsAdd }) => {
       price: price
     };
     await axios.post(`${url}/notes.json`, item);
+    toggleFakeAdd(true);
     offIsAdd();
   };
 

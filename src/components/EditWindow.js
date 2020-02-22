@@ -3,7 +3,7 @@ import * as axios from "axios";
 import firebase from "firebase";
 import { useState } from "react";
 
-const EditWindow = ({ closeEditWindow, ID }) => {
+const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -66,6 +66,7 @@ const EditWindow = ({ closeEditWindow, ID }) => {
   const remove = async id => {
     await axios.delete(`${url}/notes/${id}.json`);
     closeEditWindow();
+    showDelele(id);
   };
 
   const handleSubmit = e => {

@@ -5,7 +5,14 @@ import Paginator from "./Paginator";
 
 const url = "https://alena-nails.firebaseio.com";
 
-const Main = ({ isEdit, openEditWindow, setItemId }) => {
+const Main = ({
+  isEdit,
+  openEditWindow,
+  setItemId,
+  deleteId,
+  fakeAdd,
+  toggleFakeAdd
+}) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +29,7 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
       };
     });
     setData(payload.reverse());
-    setPageData(payload.reverse().slice(0, currentPage * 20));
+    setPageData(payload.slice(0, currentPage * 20));
     setIsLoading(false);
   };
 
@@ -40,6 +47,11 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
     setCurrentPage(page);
   };
 
+  if (fakeAdd) {
+    fetch();
+    toggleFakeAdd(false);
+  }
+
   return (
     <>
       {isLoading ? (
@@ -53,19 +65,23 @@ const Main = ({ isEdit, openEditWindow, setItemId }) => {
             <div className="row">
               <div className="ui four doubling stackable cards">
                 {pageData.map(item => {
-                  return (
-                    <Card
-                      setItemId={setItemId}
-                      isEdit={isEdit}
-                      openEditWindow={openEditWindow}
-                      name={item.name}
-                      price={item.price}
-                      image={item.url}
-                      about={item.description}
-                      key={item.id}
-                      id={item.id}
-                    />
-                  );
+                  if (item.id == deleteId) {
+                    return null;
+                  } else {
+                    return (
+                      <Card
+                        setItemId={setItemId}
+                        isEdit={isEdit}
+                        openEditWindow={openEditWindow}
+                        name={item.name}
+                        price={item.price}
+                        image={item.url}
+                        about={item.description}
+                        key={item.id}
+                        id={item.id}
+                      />
+                    );
+                  }
                 })}
               </div>
             </div>
