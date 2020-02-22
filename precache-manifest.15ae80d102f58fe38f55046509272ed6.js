@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "709d9f792728095f7f2564a13eb4bf3f",
+    "revision": "0dbacb67921e19675437e77c6b38e370",
     "url": "/Alena-Nails/index.html"
   },
   {
-    "revision": "72c37b530ad27cf80637",
-    "url": "/Alena-Nails/static/css/main.ae7de66e.chunk.css"
+    "revision": "fc82d4e2ddb632acf3b5",
+    "url": "/Alena-Nails/static/css/main.efd148da.chunk.css"
   },
   {
     "revision": "c6d78304f15e6625a1e3",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Alena-Nails/static/js/2.fbd430be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "72c37b530ad27cf80637",
-    "url": "/Alena-Nails/static/js/main.9e2c0e8f.chunk.js"
+    "revision": "fc82d4e2ddb632acf3b5",
+    "url": "/Alena-Nails/static/js/main.715bc76e.chunk.js"
   },
   {
     "revision": "e67ae4d3979ad6df4e32",
