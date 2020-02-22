@@ -5,8 +5,7 @@ import Preloader from "./components/Preloader";
 import Add from "./components/Add";
 import EditWindow from "./components/EditWindow";
 import Password from "./components/Password";
-// import firebase, { app } from "firebase";
-
+import Contacts from "./components/Contacts";
 function App() {
   // const [users, setUsers] = useState([{ name: "nikita" }, { name: "sonya" }]);
   const [isEdit, setIsEdit] = useState(false);
@@ -22,6 +21,8 @@ function App() {
 
   const [passwordRequired, setPasswordRequired] = useState(false);
   const [editMode, setEditMode] = useState(false);
+
+  const [isContacts, setIsContacts] = useState(false);
 
   const openEditWindow = () => {
     setIsEditWindow(true);
@@ -61,6 +62,14 @@ function App() {
     setEditMode(true);
   };
 
+  const openContacts = () => {
+    setIsContacts(true);
+  };
+
+  const closeContacts = () => {
+    setIsContacts(false);
+  };
+
   setTimeout(() => {
     setIsLoading(false);
   }, 2000);
@@ -86,10 +95,13 @@ function App() {
         />
       ) : null}
 
+      {isContacts ? <Contacts closeContacts={closeContacts} /> : null}
+
       <Navbar
         onIsAdd={onIsAdd}
         toggleIsEdit={toggleIsEdit}
         editMode={editMode}
+        openContacts={openContacts}
       />
 
       <Main
@@ -106,7 +118,6 @@ function App() {
           style={{ fontSize: "24px" }}
           class="paperclip icon"
         ></i>
-        {/* <button onClick={handlePassword}>Register</button> */}
       </div>
     </div>
   );

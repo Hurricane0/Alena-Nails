@@ -41,7 +41,9 @@ const Password = ({ switchEditMode, unhandlePassword }) => {
           <button type="submit" className="ui button fluid positive">
             Подтвердить
           </button>
-          <button className="ui button fluid black">Закрыть</button>
+          <button onClick={unhandlePassword} className="ui button fluid black">
+            Закрыть
+          </button>
           <p></p>
         </div>
       </div>

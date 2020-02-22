@@ -32,6 +32,13 @@ code {
   .navbar {
     width: 105%;
   }
+  .div_for_content {
+    width: 95% !important;
+  }
+  .contacts {
+    right: 15px !important;
+    font-size: 16px !important;
+  }
   #custom_card {
     width: 80% !important;
     margin: 20px auto;
@@ -72,6 +79,9 @@ code {
 @media screen and (max-width: 776px) and (min-width: 451px) {
   .navbar {
     width: 105%;
+  }
+  .div_for_content {
+    width: 80% !important;
   }
   #custom_card {
     width: 65% !important;
@@ -118,6 +128,12 @@ code {
   }
 }
 /*  */
+
+@media screen and (min-width: 1000px) and (max-width: 1500px) {
+  .div_for_content {
+    width: 75% !important;
+  }
+}
 .preloader {
   position: fixed;
   height: 100vh;
@@ -247,25 +263,52 @@ code {
 }
 .add_button {
   position: absolute;
-  background-color: rgb(238, 237, 237);
+  background-color: #fff;
   color: rgb(63, 62, 62);
   border: none;
   outline: none;
   font-size: 16px;
-  top: 19px;
+  top: 45px;
   border-radius: 5px;
   text-decoration: none;
-  box-shadow: 0px 1px 3px;
+  box-shadow: 0px 1px 5px;
+  left: 3px;
 }
 .edit_button {
   color: rgb(63, 62, 62);
   position: absolute;
-  top: 60px;
-  background-color: rgb(238, 237, 237);
+  top: 88px;
+  left: 3px;
+  background-color: #fff;
   border: none;
   outline: none;
   font-size: 16px;
   border-radius: 5px;
   text-decoration: none;
-  box-shadow: 0px 1px 3px;
+  box-shadow: 0px 1px 5px;
+}
+
+.contacts {
+  font-size: 18px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.div_for_content {
+  width: 55%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.contacts_modal {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.contacts_icons {
+  font-size: 20px !important;
 }
