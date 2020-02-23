@@ -17,7 +17,12 @@ const Contacts = ({ closeContacts }) => {
         </div>
         <div className="contacts_icons">
           <i className="ui icon viber"></i>
-          Алена Гончаренко
+          <a
+            target="_blank"
+            href="https://invite.viber.com/?g2=AQAefL172aMQKknu3UPygQOtFHvjhiGX4tnRESR03zkPdh9O4sOx6D24hPSV7BZP"
+          >
+            Сообщество в Вайбере
+          </a>
         </div>
         <button onClick={closeContacts} className="ui button black">
           Закрыть

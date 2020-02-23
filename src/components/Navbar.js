@@ -19,7 +19,7 @@ const Navbar = ({ onIsAdd, toggleIsEdit, editMode, openContacts }) => {
 
           <Logo />
           <span onClick={openContacts} className="contacts">
-            <i class="phone icon"></i>Контакты
+            <i className="phone icon"></i>Контакты
           </span>
         </div>
       </div>
