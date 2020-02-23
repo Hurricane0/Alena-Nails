@@ -5,7 +5,10 @@ const Contacts = ({ closeContacts }) => {
     <div className="modal_container ">
       <div className="custom_modal contacts_modal">
         <div className="contacts_icons">
-          <i className="ui icon phone"></i>+380 (66) 907 55 40
+          <i className="ui icon phone"></i>+380 (66) 907 5540
+        </div>
+        <div className="contacts_icons">
+          <i className="ui icon phone"></i>+380 (68) 643 4266
         </div>
 
         <div className="contacts_icons">
