@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Alena-Nails/static/css/main.efd148da.chunk.css",
-    "main.js": "/Alena-Nails/static/js/main.db222380.chunk.js",
-    "main.js.map": "/Alena-Nails/static/js/main.db222380.chunk.js.map",
+    "main.js": "/Alena-Nails/static/js/main.4da889ec.chunk.js",
+    "main.js.map": "/Alena-Nails/static/js/main.4da889ec.chunk.js.map",
     "runtime-main.js": "/Alena-Nails/static/js/runtime-main.69545e1f.js",
     "runtime-main.js.map": "/Alena-Nails/static/js/runtime-main.69545e1f.js.map",
     "static/js/2.fbd430be.chunk.js": "/Alena-Nails/static/js/2.fbd430be.chunk.js",
     "static/js/2.fbd430be.chunk.js.map": "/Alena-Nails/static/js/2.fbd430be.chunk.js.map",
     "index.html": "/Alena-Nails/index.html",
-    "precache-manifest.6a79b6c463f69415bf9a089d2f591648.js": "/Alena-Nails/precache-manifest.6a79b6c463f69415bf9a089d2f591648.js",
+    "precache-manifest.a84d80e506fc991a79061645a56e1b77.js": "/Alena-Nails/precache-manifest.a84d80e506fc991a79061645a56e1b77.js",
     "service-worker.js": "/Alena-Nails/service-worker.js",
     "static/css/main.efd148da.chunk.css.map": "/Alena-Nails/static/css/main.efd148da.chunk.css.map",
     "static/js/2.fbd430be.chunk.js.LICENSE.txt": "/Alena-Nails/static/js/2.fbd430be.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.69545e1f.js",
     "static/js/2.fbd430be.chunk.js",
     "static/css/main.efd148da.chunk.css",
-    "static/js/main.db222380.chunk.js"
+    "static/js/main.4da889ec.chunk.js"
   ]
 }
