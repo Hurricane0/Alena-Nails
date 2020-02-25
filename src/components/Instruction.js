@@ -23,7 +23,7 @@ const Instruction = () => {
               target="_blank"
               href="https://cloudinary.com/console/c-cc2ee3399500d9bf5d70727ac25863/media_library/folders/%2F"
             >
-              Нажмите сюда чтоб перейти по ссылке по ссылке
+              Нажмите сюда чтоб перейти по ссылке
             </a>
           </p>
           <p>Скопируйте этот email: nikitadv777@gmail.com</p>
