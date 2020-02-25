@@ -1,4 +1,5 @@
 import React from "react";
+import { storage } from "../firebase";
 import * as axios from "axios";
 import firebase from "firebase";
 import { useState } from "react";
@@ -7,7 +8,12 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [url, setUrl] = useState("");
+
+  const [newPhotoUrl, setNewPhotoUrl] = useState("");
+  const [isDownloaded, setIsDownloaded] = useState(false);
+  const [image, setImage] = useState(null);
+  //////////////////////////////////////  FOR NEW URL
+  // const [url, setUrl] = useState("");
 
   const URL = "https://alena-nails.firebaseio.com";
 
@@ -63,11 +69,17 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
       });
     }
     //URL
-    else if (url.trim()) {
+    else if (isDownloaded) {
       itemRef.update({
-        url: url
+        url: newPhotoUrl
       });
     }
+    //URL//////////////////////////////////////  FOR NEW URL
+    // else if (url.trim()) {
+    //   itemRef.update({
+    //     url: url
+    //   });
+    //}
   };
 
   const remove = async id => {
@@ -91,22 +103,74 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
   const handlePrice = e => {
     setPrice(e.target.value);
   };
-  const handleUrl = e => {
-    setUrl(e.target.value);
+  const handleNewPhotoChange = e => {
+    if (e.target.files[0]) {
+      const photo = e.target.files[0];
+      setImage(photo);
+    }
   };
+
+  const handleUpload = () => {
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => {},
+      error => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            setNewPhotoUrl(url);
+          });
+      }
+    );
+    setIsDownloaded(true);
+  };
+
+  //////////////////////////////////////  FOR NEW URL
+  // const handleUrl = e => {
+  //   setUrl(e.target.value);
+  // };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="modal_container ">
         <div className="custom_modal edit_window">
-          <div className="ui fluid input error">
+          <input onChange={handleNewPhotoChange} type="file" />
+          <div>
+            <i
+              style={{
+                fontSize: "24px",
+                color: isDownloaded ? "green" : "red"
+              }}
+              className="hand point right ui icon"
+            ></i>
+            <button
+              id="download"
+              onClick={handleUpload}
+              type="button"
+              className={
+                isDownloaded
+                  ? "tiny positive ui button"
+                  : "tiny negative ui button"
+              }
+            >
+              Загрузить фото
+            </button>
+          </div>
+          {/* ////////////////////////////////////////////FOR NEW URL */}
+          {/* <div className="ui fluid input error">
             <input
               value={url}
               onChange={handleUrl}
               type="text"
               placeholder="Новый адресс фото"
             />
-          </div>
+          </div> */}
           <div className="ui fluid input">
             <input
               value={name}
