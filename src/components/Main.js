@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import * as axios from "axios";
 import Paginator from "./Paginator";
+import Preloader from "./Preloader";
 
 const url = "https://alena-nails.firebaseio.com";
 
@@ -55,7 +56,7 @@ const Main = ({
   return (
     <>
       {isLoading ? (
-        <div>Loading...</div>
+        <Preloader />
       ) : (
         <div>
           <div

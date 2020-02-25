@@ -7,8 +7,9 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+  const [url, setUrl] = useState("");
 
-  const url = "https://alena-nails.firebaseio.com";
+  const URL = "https://alena-nails.firebaseio.com";
 
   const database = firebase.database();
   const itemRef = database.ref("notes/" + ID);
@@ -61,10 +62,16 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
         price: price
       });
     }
+    //URL
+    else if (url.trim()) {
+      itemRef.update({
+        url: url
+      });
+    }
   };
 
   const remove = async id => {
-    await axios.delete(`${url}/notes/${id}.json`);
+    await axios.delete(`${URL}/notes/${id}.json`);
     closeEditWindow();
     showDelele(id);
   };
@@ -84,11 +91,22 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
   const handlePrice = e => {
     setPrice(e.target.value);
   };
+  const handleUrl = e => {
+    setUrl(e.target.value);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="modal_container ">
         <div className="custom_modal edit_window">
+          <div className="ui fluid input error">
+            <input
+              value={url}
+              onChange={handleUrl}
+              type="text"
+              placeholder="Новый адресс фото"
+            />
+          </div>
           <div className="ui fluid input">
             <input
               value={name}
@@ -97,7 +115,6 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
               placeholder="Новое название"
             />
           </div>
-          <p></p>
           <div className="ui fluid input">
             <input
               value={description}
@@ -106,7 +123,6 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
               placeholder="Новое описание"
             />
           </div>
-          <p></p>
           <div className="ui fluid input">
             <input
               value={price}
@@ -115,7 +131,6 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
               placeholder="Новая цена"
             />
           </div>
-          <p></p>
           <button
             type="button"
             onClick={() => remove(ID)}
@@ -134,7 +149,6 @@ const EditWindow = ({ closeEditWindow, ID, showDelele }) => {
           >
             Закрыть
           </button>
-          <p></p>
         </div>
       </div>
     </form>

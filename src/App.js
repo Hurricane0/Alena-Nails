@@ -6,8 +6,8 @@ import Add from "./components/Add";
 import EditWindow from "./components/EditWindow";
 import Password from "./components/Password";
 import Contacts from "./components/Contacts";
+import Instruction from "./components/Instruction";
 function App() {
-  // const [users, setUsers] = useState([{ name: "nikita" }, { name: "sonya" }]);
   const [isEdit, setIsEdit] = useState(false);
 
   const [isEditWindow, setIsEditWindow] = useState(false);
@@ -103,6 +103,8 @@ function App() {
         editMode={editMode}
         openContacts={openContacts}
       />
+
+      {editMode ? <Instruction /> : null}
 
       <Main
         setItemId={setItemId}

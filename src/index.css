@@ -192,6 +192,8 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 .selectedPage {
   background-color: #e9ebee;
@@ -317,4 +319,8 @@ code {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+.instruction_container {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
