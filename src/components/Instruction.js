@@ -12,7 +12,7 @@ const Instruction = () => {
         <>
           <span
             onClick={toggleInstruction}
-            style={{ color: "red" }}
+            style={{ color: "red", marginBottom: "10px" }}
             className="toggle_instruction"
           >
             Закрыть инструкцию
