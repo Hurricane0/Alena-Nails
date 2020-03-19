@@ -20,6 +20,7 @@ const Instruction = () => {
           <p>
             <i className="hand point right ui icon "></i>
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href="https://cloudinary.com/console/c-cc2ee3399500d9bf5d70727ac25863/media_library/folders/%2F"
             >

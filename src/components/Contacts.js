@@ -19,6 +19,7 @@ const Contacts = ({ closeContacts }) => {
           <i className="ui icon viber"></i>
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://invite.viber.com/?g2=AQAefL172aMQKknu3UPygQOtFHvjhiGX4tnRESR03zkPdh9O4sOx6D24hPSV7BZP"
           >
             Сообщество в Вайбере

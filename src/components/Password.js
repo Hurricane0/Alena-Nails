@@ -6,7 +6,7 @@ const Password = ({ switchEditMode, unhandlePassword }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (password == "1983") {
+    if (password === "1983") {
       setRightPass(true);
       switchEditMode();
       unhandlePassword();

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import * as axios from "axios";
 import Paginator from "./Paginator";
-import Preloader from "./Preloader";
 
 const url = "https://alena-nails.firebaseio.com";
 
@@ -56,7 +55,7 @@ const Main = ({
   return (
     <>
       {isLoading ? (
-        <Preloader />
+        <></>
       ) : (
         <div>
           <div
@@ -66,7 +65,7 @@ const Main = ({
             <div className="row">
               <div className="ui four doubling stackable cards">
                 {pageData.map(item => {
-                  if (item.id == deleteId) {
+                  if (item.id === deleteId) {
                     return null;
                   } else {
                     return (
