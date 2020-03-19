@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Alena-Nails/precache-manifest.2424d2e236edf511f4d165c95bf7c7c8.js"
+  "/Alena-Nails/precache-manifest.b40bbc945b0a677610435e1576c18bfc.js"
 );
 
 self.addEventListener('message', (event) => {
