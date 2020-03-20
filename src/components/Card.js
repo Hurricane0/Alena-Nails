@@ -22,12 +22,20 @@ const Card = ({
       {isBig ? (
         <div id="custom_big_picture">
           <div id="custom_div_image" className="image ">
-            <img onClick={() => setIsBig(false)} src={image} alt="someImage" />
+            <img
+              onClick={() => setIsBig(false)}
+              src={image}
+              alt="Приносим извинения, Проблемы на сервере"
+            />
           </div>
         </div>
       ) : (
         <div className="image">
-          <img onClick={() => setIsBig(true)} src={image} alt="someImage" />
+          <img
+            onClick={() => setIsBig(true)}
+            src={image}
+            alt="Приносим извинения, Проблемы на сервере"
+          />
         </div>
       )}
 
