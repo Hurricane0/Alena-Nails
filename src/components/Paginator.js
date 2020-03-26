@@ -19,7 +19,7 @@ const Paginator = ({
   let rightPortionPageNumber = currentPortionNumber * portionSize;
 
   return (
-    <div className={"pagesNumbersBlock"}>
+    <div className="pagesNumbersBlock">
       {currentPortionNumber > 1 && (
         <button
           onClick={() => setCurrentPortionNumber(currentPortionNumber - 1)}

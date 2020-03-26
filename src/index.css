@@ -63,6 +63,9 @@ code {
     justify-content: center;
     align-items: center;
   }
+  .pagesNumbersBlock {
+    margin-bottom: 10px;
+  }
   .pagesNumbersBlock span {
     margin: 0 2px !important;
   }
