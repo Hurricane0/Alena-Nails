@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { ReactComponent as Logo } from '../Logo_Nails_SVG.svg';
 
 const Card = ({
   name,
@@ -8,7 +9,7 @@ const Card = ({
   isEdit,
   openEditWindow,
   setItemId,
-  id
+  id,
 }) => {
   const [isBig, setIsBig] = useState(false);
 
@@ -22,20 +23,28 @@ const Card = ({
       {isBig ? (
         <div id="custom_big_picture">
           <div id="custom_div_image" className="image ">
-            <img
-              onClick={() => setIsBig(false)}
-              src={image}
-              alt="Приносим извинения, Проблемы на сервере"
-            />
+            {image ? (
+              <img
+                onClick={() => setIsBig(false)}
+                src={image}
+                alt="Картинка отсутствует"
+              />
+            ) : (
+              <Logo />
+            )}
           </div>
         </div>
       ) : (
-        <div className="image">
-          <img
-            onClick={() => setIsBig(true)}
-            src={image}
-            alt="Приносим извинения, Проблемы на сервере"
-          />
+        <div id="small-image" className="image">
+          {image ? (
+            <img
+              onClick={() => setIsBig(true)}
+              src={image}
+              alt="Картинка отсутствует"
+            />
+          ) : (
+            <Logo />
+          )}
         </div>
       )}
 
@@ -45,7 +54,7 @@ const Card = ({
         <div className="description">{about}</div>
       </div>
       <div className="extra content">
-        <span style={{ fontWeight: "bold", fontSize: "15px" }}>
+        <span style={{ fontWeight: 'bold', fontSize: '15px' }}>
           <i className="tags icon"></i>
           {price}грн
         </span>
